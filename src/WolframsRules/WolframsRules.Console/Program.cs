@@ -8,11 +8,11 @@ namespace WolframsRules.ConsoleApp
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            var currentRow = WolframsRules.Common.RowFactory.CreateFirst(100);
+            var currentRow = WolframsRules.Common.RowFactory.CreateFirst(55);
             WriteRow(currentRow);
           
             
-            var rules = new Rules(121, Rules.EdgeCase.WhiteBorder);
+            var rules = new Rules(30, Rules.EdgeCase.WhiteBorder);
             for (int i = 0; i < 40; i++)
             {
                 Console.WriteLine();
@@ -26,7 +26,7 @@ namespace WolframsRules.ConsoleApp
         {
             foreach (var item in row.Cells)
             {
-                Console.Write(item.GetFlagCharacter('$') + " ");
+                Console.Write(item.GetFlagCharacter('+') + " ");
             }
         }
     }
