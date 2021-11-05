@@ -31,10 +31,18 @@ namespace WolframsRules.Common
         public static Row GenerateNext(Rules rules, Row previousRow)
         {
             var cells = new List<Cell>();
-            foreach (var item in previousRow.Cells)
+            int newState = 0;
+            for (int i = 0; i < previousRow.Cells.Count; i++)
             {
-                cells.Add(new Cell(item.Flag == 1 ? 0 : 1));
+                // Assuming whitespace edges
+                // TODO can cope with this differently depending on edgcase enum
+                if (i > 0 && i < previousRow.Cells.Count - 1)
+                {
+                    newState = rules.GetNewState(previousRow.Cells.ElementAt(i - 1), previousRow.Cells.ElementAt(i), previousRow.Cells.ElementAt(i + 1));
+                }
+                cells.Add(new Cell(newState));
             }
+
             var row = new Row(cells);
             return row;
         }

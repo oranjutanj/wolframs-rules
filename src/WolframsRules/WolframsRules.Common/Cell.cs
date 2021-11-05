@@ -8,13 +8,17 @@ namespace WolframsRules.Common
 {
     public class Cell
     {
-        public Cell(int flag)
+        public Cell(int state)
         {
-            if (flag < 0 || flag > 1)
+            if (state < 0 || state > 1)
                 throw new ArgumentException("Cell flag must be 0 or 1");
-            Flag = flag;
+            State = state;
         }
 
-        public int Flag { get; private set; }
+        public int State { get; private set; }
+        public string GetFlagCharacter(char character)
+        {
+            return State == 1 ? character.ToString() : " ";
+        }
     }
 }
