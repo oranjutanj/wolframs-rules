@@ -42,21 +42,6 @@ namespace WolframsRules.Tests
             }
         }
 
-        //[Fact]
-        //public void Rules_ReturnsInvalidState()
-        //{
-        //    foreach (var test in RuleDefinitionsHelper.GetInvalidDefinitions())
-        //    {
-        //        Debug.WriteLine("Testing Rule " + test.RuleNumber + " ; " + test.States.ToString());
-        //        for (int i = 0; i < test.States.Length; i++)
-        //        {
-        //            Debug.Write(i + " ");
-        //            int predictedState = GetNewState(test.RuleNumber, (i & 4) / 4, (i & 2) / 2, i & 1);
-        //            Assert.NotEqual<int>(test.States[i], predictedState);
-        //        }
-        //    }
-        //}
-
         // Helpers
         private int GetNewState(int ruleNumber, int leftCellState, int centreCellState, int rightCellState)
         {
