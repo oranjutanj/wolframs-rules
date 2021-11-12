@@ -31,8 +31,9 @@ namespace WolframsRules.App
 
         private void btnGo_Click(object sender, RoutedEventArgs e)
         {
-            Rules rules = new Rules(30, Rules.EdgeCase.WhiteBorder);
+            Rules rules = new Rules(Convert.ToInt32(txtRule.Text), Rules.EdgeCase.WhiteBorder);
             Row currentRow = RowFactory.CreateFirst(100);
+            canvas.Children.Clear();
             DrawRow(currentRow, 0);
             for (int i = 0; i < 100; i++)
             {

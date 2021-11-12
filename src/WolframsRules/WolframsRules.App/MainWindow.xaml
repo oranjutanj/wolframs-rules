@@ -5,13 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WolframsRules.App"
         mc:Ignorable="d"
-        Title="MainWindow" Height="700" Width="800" ResizeMode="NoResize">
+        Title="MainWindow" Height="700" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30" />
             <RowDefinition />
         </Grid.RowDefinitions>
         <Grid>
+            <StackPanel Orientation="Horizontal">
+                <Label>Rule:</Label>               
+                <TextBox Width="100" x:Name="txtRule" HorizontalAlignment="Left" Text="30" VerticalAlignment="Center" />
+            </StackPanel>
             <Button x:Name="btnGo" HorizontalAlignment="Right" Content="Go" Width="100" Click="btnGo_Click"/>
         </Grid>
         <ScrollViewer Grid.Row="1">
